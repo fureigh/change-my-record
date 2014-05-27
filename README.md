@@ -1,6 +1,8 @@
-# CalFresh and So Clean
+# Medi-CalFresh and So Clean
 
-Making applying to the CalFresh program not suck.
+Making applying for Medi-Cal not suck.
+
+# @todo: Update the below. (Currently it's verbatim from Dave Guarino's CalFresh and So Clean.)
 
 ## How it sucks now
 
