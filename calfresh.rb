@@ -2,14 +2,17 @@ require 'pdf_forms'
 require 'securerandom'
 
 module Calfresh
-  FORM_FIELDS = { name: 'Text1 PG 1', \
-    home_address: 'Text4 PG 1', \
-    home_city: 'Text5 PG 1', \
-    home_state: 'Text6 PG 1', \
-    home_zip_code: 'Text7 PG 1', \
-    date: 'Text32 PG 1', \
-    home_phone_number: 'Text12 PG 1', \
-    email: 'Text13 PG 1'
+  FORM_FIELDS = { name_first: 'First Name', \
+    name_middle_initial: 'Middle Initial', \ # @todo: Determine how to handle non-required fields.
+    name_last: 'Last Name', \
+    home_address: 'HOME ADDRESS NUMBER AND STREET DO NOT LIST A PO BOX UNLESS HOMELESS 2', \ # Mailing better than residence, yes?
+    # @todo: Add apartment number! To @CalFresh-and-so-clean too.
+    home_city_state: 'CITYSTATE 5', \
+    home_zip_code: 'ZIP CODE 7', \
+#    date: 'Text32 PG 1', \ # @todo @maybe. It's handwritten in the Medi-Cal application.
+    home_phone_number: 'Telephone Number', \
+#    email: 'Text13 PG 1' # @todo @maybe. Not present in the Medi-Cal application.
+    # @todo: Add the remaining fields. Test these first.
   }
 
   class ApplicationWriter
