@@ -3,16 +3,12 @@ require 'securerandom'
 
 module Calfresh
   FORM_FIELDS = { name_first: 'First Name', \
-    name_middle_initial: 'Middle Initial', \ # @todo: Determine how to handle non-required fields.
+    name_middle_initial: 'Middle Initial', \
     name_last: 'Last Name', \
-    home_address: 'HOME ADDRESS NUMBER AND STREET DO NOT LIST A PO BOX UNLESS HOMELESS 2', \ # Mailing better than residence, yes?
-    # @todo: Add apartment number! To @CalFresh-and-so-clean too.
+    home_address: 'HOME ADDRESS NUMBER AND STREET DO NOT LIST A PO BOX UNLESS HOMELESS 2', \
     home_city_state: 'CITYSTATE 5', \
     home_zip_code: 'ZIP CODE 7', \
-#    date: 'Text32 PG 1', \ # @todo @maybe. It's handwritten in the Medi-Cal application.
-    home_phone_number: 'Telephone Number', \
-#    email: 'Text13 PG 1' # @todo @maybe. Not present in the Medi-Cal application.
-    # @todo: Add the remaining fields. Test these first.
+    home_phone_number: 'Telephone Number'
   }
 
   class ApplicationWriter
@@ -28,7 +24,7 @@ module Calfresh
       input_for_pdf_writer[FORM_FIELDS[:date]] = Date.today.strftime("%m/%d/%Y")
       unique_key = SecureRandom.hex
       filled_in_form_path = "/tmp/application_#{unique_key}.pdf"
-      @pdftk.fill_form('./calfresh_application_single_page.pdf', filled_in_form_path, input_for_pdf_writer)
+      @pdftk.fill_form('./calfresh_application_single_page.pdf', filled_in_form_path, input_for_pdf_writer) # @todo: Update.
       write_signature_png_to_tmp(base64_signature_blob, unique_key)
       convert_application_pdf_to_png_set(unique_key)
       add_signature_to_application(unique_key)
