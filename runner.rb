@@ -1,4 +1,4 @@
-require 'pry'
+# require 'pry'
 require './calfresh'
 require './faxer'
 
@@ -15,4 +15,4 @@ if app.has_pngs?
   # Faxer.send_fax(ENV['FAX_DESTINATION_NUMBER'], app.png_file_set)
 end
 
-binding.pry
+# binding.pry
