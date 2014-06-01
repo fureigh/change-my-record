@@ -2,14 +2,13 @@ require 'pdf_forms'
 require 'securerandom'
 
 module Calfresh
-  FORM_FIELDS = { name: 'Text1 PG 1', \
-    home_address: 'Text4 PG 1', \
-    home_city: 'Text5 PG 1', \
-    home_state: 'Text6 PG 1', \
-    home_zip_code: 'Text7 PG 1', \
-    date: 'Text32 PG 1', \
-    home_phone_number: 'Text12 PG 1', \
-    email: 'Text13 PG 1'
+  FORM_FIELDS = { name_first: 'First Name', \
+    name_middle_initial: 'Middle Initial', \
+    name_last: 'Last Name', \
+    home_address: 'HOME ADDRESS NUMBER AND STREET DO NOT LIST A PO BOX UNLESS HOMELESS 2', \
+    home_city_state: 'CITYSTATE 5', \
+    home_zip_code: 'ZIP CODE 7', \
+    home_phone_number: 'Telephone Number'
   }
 
   class ApplicationWriter
@@ -25,7 +24,7 @@ module Calfresh
       input_for_pdf_writer[FORM_FIELDS[:date]] = Date.today.strftime("%m/%d/%Y")
       unique_key = SecureRandom.hex
       filled_in_form_path = "/tmp/application_#{unique_key}.pdf"
-      @pdftk.fill_form('./calfresh_application_single_page.pdf', filled_in_form_path, input_for_pdf_writer)
+      @pdftk.fill_form('./calfresh_application_single_page.pdf', filled_in_form_path, input_for_pdf_writer) # @todo: Update.
       write_signature_png_to_tmp(base64_signature_blob, unique_key)
       convert_application_pdf_to_png_set(unique_key)
       add_signature_to_application(unique_key)

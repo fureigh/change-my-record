@@ -1,34 +1,46 @@
-<h1>Apply for CalFresh in San Francisco</h1>
+<h1>Apply for Medi-Cal in California</h1>
 <hr>
 <form role="form" name="apply" action="applications" method="post">
   <div class="form-group">
-    <label for="name">Full name</label>
-      <input type="text" class="form-control" name="name" id="name" placeholder="John Smith">
-      <span class="help-block">Include your full legal name.</span>
+    <label for="name_first">First name</label>
+      <input type="text" class="form-control" name="name_first" id="name_first" placeholder="Juanita">
+      <span class="help-block">Include your legal first name.</span>
   </div>
-  
+
+  <div class="form-group">
+    <label for="name_middle_initial">Middle initial</label>
+      <input type="text" class="form-control" name="name_middle_initial" id="name_middle_initial" placeholder="Q">
+      <span class="help-block">Include the initial of your legal middle name, if you have one.</span>
+  </div>
+
+  <div class="form-group">
+    <label for="name_last">Last name</label>
+      <input type="text" class="form-control" name="name_last" id="name_last" placeholder="Smith">
+      <span class="help-block">Include your legal last name.</span>
+  </div>
+
   <div class="form-group">
     <label for="home_address">Address</label>
       <input type="text" class="form-control" name="home_address" placeholder="1234 Fake Street">
+    <label for="home_city">City</label> <!-- @todo: Reconcile with home_city_state -->
+      <input type="text" class="form-control" name="home_city" placeholder="San Francisco">
       <div class="input-group">
-        <span class="input-group-addon">San Francisco, CA</span>
         <input type="text" class="form-control" name="home_zip_code" placeholder="941...">
       </div>
-      <span class="help-block">You have to live in San Francisco to get CalFresh.</span>
+      <span class="help-block">You have to live in California to be eligible for Medi-Cal. If you don't live in California, apply for Medicaid.</span>
   </div>
-  
-  <!-- City: San Francisco, State: CA -->
-  <input type="hidden" class="form-control" name="home_city" value="San Francisco">
+
+  <!-- State: CA -->
   <input type="hidden" class="form-control" name="home_state" value="CA">
-  
+
   <div class="form-group">
     <label for="home_phone_number">Phone number</label>
       <input type="text" class="form-control" name="home_phone_number" placeholder="(415) 555-5555">
   </div>
-  
+
   <div class="form-group">
     <label for="email">Email</label>
-      <input type="text" class="form-control" name="email" placeholder="john.smith@gmail.com">
+      <input type="text" class="form-control" name="email" placeholder="juanita.smith@example.com">
       <span class="help-block">You don't have to include your phone number or email address, but it will help us get in touch with you.</span>
   </div>
 
@@ -38,8 +50,8 @@
       <div id="signature_value_hidden"></div>
       <span class="help-block">Sign on the line. You can sign with your mouse or your finger if you're using a touch screen.</span>
   </div>
-  
+
     <div class="form-group">
-        <button type="submit" id="submit_button" class="btn btn-default">Submit your CalFresh application!</button>
+        <button type="submit" id="submit_button" class="btn btn-default">Submit your Medi-Cal application!</button>
     </div>
 </form>
