@@ -22,6 +22,8 @@
   <div class="form-group">
     <label for="home_address">Address</label>
       <input type="text" class="form-control" name="home_address" placeholder="1234 Fake Street">
+    <label for="home_apt">Apartment number</label>
+      <input type="text" class="form-control" name="home_apt" placeholder="Apt. 3"> <!-- @todo: Determine whether this needs to be in a separate field on the PDF for it to be usable. -->
     <label for="home_city">City</label> <!-- @todo: Reconcile with home_city_state -->
       <input type="text" class="form-control" name="home_city" placeholder="San Francisco">
       <div class="input-group">
@@ -30,18 +32,77 @@
       <span class="help-block">You have to live in California to be eligible for Medi-Cal. If you don't live in California, apply for Medicaid.</span>
   </div>
 
+  <div class="form-group">
+    <label for="home_county">County</label>
+      <input type="text" class="form-control" name="home_county" id="home_county" placeholder="San Francisco">
+      <span class="help-block">The county in which you live.</span>
+  </div>
+
+  <div class="form-group">
+    <label for="mailing_address">Mailing address (if different from above) or P.O. box</label>
+      <input type="text" class="form-control" name="mailing_address" placeholder="1234 Fake Street">
+    <label for="mailing_apt">Apartment number</label>
+      <input type="text" class="form-control" name="mailing_apt" placeholder="Apt. 3"> <!-- @todo: Determine whether this needs to be in a separate field on the PDF for it to be usable. -->
+    <label for="mailing_city_state">City</label> <!-- @todo: Reconcile with home_city_state -->
+      <input type="text" class="form-control" name="mailing_city_state" placeholder="San Francisco">
+      <div class="input-group">
+        <input type="text" class="form-control" name="mailing_zip" placeholder="941...">
+      </div>
+  </div>
+
   <!-- State: CA -->
   <input type="hidden" class="form-control" name="home_state" value="CA">
 
   <div class="form-group">
+    <label for="home_phone_number_area_code">Area code</label>
+      <input type="text" class="form-control" name="home_phone_number_area_code" placeholder="415">
     <label for="home_phone_number">Phone number</label>
-      <input type="text" class="form-control" name="home_phone_number" placeholder="(415) 555-5555">
+      <input type="text" class="form-control" name="home_phone_number" placeholder="555-5555">
+  </div>
+
+  <!-- Phone numbers -->
+  <!-- @todo: Make clear which of these fields are NOT required and what their intended use is. -->
+  <!-- "Message number" -->
+  <div class="form-group">
+    <label for="message_phone_number_area_code">Area code</label>
+      <input type="text" class="form-control" name="message_phone_number_area_code" placeholder="415">
+    <label for="message_phone_number">Phone number</label>
+      <input type="text" class="form-control" name="message_phone_number" placeholder="555-5555">
+      <span class="help-block">A phone number where it's okay to leave a message.</span>
+  </div>
+
+  <!-- Home number -->
+  <div class="form-group">
+    <label for="home_phone_number_area_code">Area code</label>
+      <input type="text" class="form-control" name="home_phone_number_area_code" placeholder="415">
+    <label for="home_phone_number">Home phone number</label>
+      <input type="text" class="form-control" name="home_phone_number" placeholder="555-5555">
+  </div>
+
+  <!-- Work number -->
+  <div class="form-group">
+    <label for="work_phone_number_area_code">Area code</label>
+      <input type="text" class="form-control" name="work_phone_number_area_code" placeholder="415">
+    <label for="work_phone_number">Work phone number</label>
+      <input type="text" class="form-control" name="work_phone_number" placeholder="555-5555">
+      <span class="help-block">A work number where we can reach you, if applicable.</span>
   </div>
 
   <div class="form-group">
     <label for="email">Email</label>
       <input type="text" class="form-control" name="email" placeholder="juanita.smith@example.com">
       <span class="help-block">You don't have to include your phone number or email address, but it will help us get in touch with you.</span>
+  </div>
+
+  <div class="form-group">
+    <label for="language_speak">What language/dialect do you speak best?</label>
+      <input type="text" class="form-control" name="language_speak" placeholder="Spanish">
+      <span class="help-block">You don't have to include this, but it will help us communicate with you.</span>
+  </div>
+  <div class="form-group">
+    <label for="language_read">What language do you read best?</label>
+      <input type="text" class="form-control" name="language_read" placeholder="English">
+      <span class="help-block">You don't have to include this, but it will help us communicate with you.</span>
   </div>
 
   <div class="form-group">
