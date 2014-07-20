@@ -17,6 +17,10 @@ module Calfresh
     dob_year: 'Adult 1 Year', \
     ssn: 'Social Security', \
     marital_status: 'Adult 1A Status', \
+    citizen: '#50 AD1', \
+    us_entry_month: 'Adult 1 Citizen Month', \
+    us_entry_day: 'Adult 1 Citizen Day', \
+    us_entry_year: 'Adult 1 Citizen Year', \
   }
 
   class ApplicationWriter
