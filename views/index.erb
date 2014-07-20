@@ -54,18 +54,14 @@
   <div class="form-group">
     <fieldset id="gender-field">
       <legend id="gender-label">Gender</legend>
-      <div class="field field-radio-input">
-        <label for="gender_male" required>
-          Male
-         <input type="radio" name="gender" id="gender_male" required></input>
-        </label>
-      </div>
-      <div class="field field-radio-input">
-        <label for="gender_female">
-          Female
-          <input type="radio" name="gender" id="gender_female" required></input>
-        </label>
-      </div>
+      <label for="gender_male" required>
+       <input type="radio" name="gender" id="gender_male" required />
+        Male
+      </label>
+      <label for="gender_female">
+        <input type="radio" name="gender" id="gender_female" required />
+        Female
+      </label>
       <span class="help-block">Your gender as recorded on your Social Security card.</span>
     </fieldset>
   </div>
@@ -73,18 +69,21 @@
   <div class="form-group">
       <fieldset id="dob">
         <legend id="dob-label">Date of birth</legend>
-        <label for="dob_month">Month</label>
-          <input id="dob_month" name="dob_month" type="month" required></input>
-        <label for="dob_day">Day</label>
-          <input id="dob_day" name="dob_day" type="day" required></input>
-        <label for="dob_year">Year</label>
-          <input id="dob_year" name="dob_year" type="year" required></input>
+        <label for="dob_month">Month
+          <input id="dob_month" name="dob_month" type="month" required />
+        </label>
+        <label for="dob_day">Day
+          <input id="dob_day" name="dob_day" type="day" required />
+        </label>
+        <label for="dob_year">Year
+          <input id="dob_year" name="dob_year" type="year" required />
+        </label>
       </fieldset>
   </div>
 
   <div class="form-group">
       <label for="ssn">Social Security Number</label>
-      <input for="ssn" name="ssn" type="text" placeholder="000-33-0000"></input>
+      <input for="ssn" name="ssn" type="text" placeholder="000-33-0000" />
       <span class="help-block">You may be able to receive Medi-Cal even if you do not have a Social Security Number.</span>
   </div>
 
@@ -93,32 +92,32 @@
       <legend id="marital-status-label">Marital status</legend>
       <div class="field field-radio-input">
         <label for="marital_status_single">
+          <input type="radio" name="marital_status" id="marital_status_single" required />
           Single
-          <input type="radio" name="marital_status" id="marital_status_single" required></input>
         </label>
       </div>
       <div class="field field-radio-input">
         <label for="marital_status_married" required>
+         <input type="radio" name="marital_status" id="marital_status_married" />
           Married
-         <input type="radio" name="marital_status" id="marital_status_married"></input>
         </label>
       </div>
       <div class="field field-radio-input">
         <label for="marital_status_divorced" required>
+         <input type="radio" name="marital_status" id="marital_status_divorced" />
           Divorced
-         <input type="radio" name="marital_status" id="marital_status_divorced"></input>
         </label>
       </div>
       <div class="field field-radio-input">
         <label for="marital_status_separated" required>
+         <input type="radio" name="marital_status" id="marital_status_separated" />
           Separated
-         <input type="radio" name="marital_status" id="marital_status_separated"></input>
         </label>
       </div>
       <div class="field field-radio-input">
         <label for="marital_status_widowed" required>
+         <input type="radio" name="marital_status" id="marital_status_widowed" />
           Widowed
-         <input type="radio" name="marital_status" id="marital_status_widowed"></input>
         </label>
       </div>
     </fieldset>
@@ -127,22 +126,28 @@
   <div class="form-group">
     <fieldset id="citizen-field">
       <legend id="citizen-label">Are you a U.S. citizen or national?</legend>
-        <label for="citizen_yes" required>
-          Yes
-         <input type="radio" name="citizen" id="citizen_yes" required></input>
+        <label for="citizen_yes" class="radio-inline">
+         <input type="radio" name="citizen" id="citizen_yes" required />
+         Yes
         </label>
-        <label for="citizen_no">
+        <label for="citizen_no" class="radio-inline">
+          <input type="radio" name="citizen" id="citizen_no" required />
           No
-          <input type="radio" name="citizen" id="citizen_no" required></input>
         </label>
       <fieldset id="us-entry-dates">
         <legend id="us-entry-dates-label">If "No," on what date did you enter the U.S.?</legend>
-        <label for="us_entry_month">Month</label>
-          <input id="us_entry_month" name="us_entry_month" type="month" required></input>
-        <label for="us_entry_day">Day</label>
-          <input id="us_entry_day" name="us_entry_day" type="day" required></input>
-        <label for="us_entry_year">Year</label>
-          <input id="us_entry_year" name="us_entry_year" type="year" required></input>
+        <label for="us_entry_month">
+          Month
+          <input id="us_entry_month" name="us_entry_month" type="month" required />
+        </label>
+        <label for="us_entry_day">
+          Day
+          <input id="us_entry_day" name="us_entry_day" type="day" required />
+        </label>
+        <label for="us_entry_year">
+          Year
+          <input id="us_entry_year" name="us_entry_year" type="year" required />
+        </label>
       </fieldset>
     </fieldset>
   </div>
