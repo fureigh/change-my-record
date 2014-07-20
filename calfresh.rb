@@ -11,6 +11,7 @@ module Calfresh
     home_zip_code: 'ZIP CODE 7', \
     message_phone_number_area_code: 'Area Code', \
     message_phone_number: 'Message Phone #', \
+    gender: 'Adult 1 Checkbox', \
   }
 
   class ApplicationWriter
