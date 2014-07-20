@@ -16,6 +16,7 @@ module Calfresh
     dob_day: 'Adult 1 Day', \
     dob_year: 'Adult 1 Year', \
     ssn: 'Social Security', \
+    marital_status: 'Adult 1A Status', \
   }
 
   class ApplicationWriter
