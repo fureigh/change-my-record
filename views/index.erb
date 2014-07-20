@@ -3,7 +3,7 @@
 <form role="form" name="apply" action="applications" method="post">
   <div class="form-group">
     <label for="name_first">First name</label>
-      <input type="text" class="form-control" name="name_first" id="name_first" placeholder="Juanita">
+      <input type="text" class="form-control" name="name_first" id="name_first" placeholder="Juanita" required>
       <span class="help-block">Include your legal first name.</span>
   </div>
 
@@ -15,19 +15,19 @@
 
   <div class="form-group">
     <label for="name_last">Last name</label>
-      <input type="text" class="form-control" name="name_last" id="name_last" placeholder="Smith">
+      <input type="text" class="form-control" name="name_last" id="name_last" placeholder="Smith" required>
       <span class="help-block">Include your legal last name.</span>
   </div>
 
   <div class="form-group">
     <label for="home_address">Address</label>
-      <input type="text" class="form-control" name="home_address" placeholder="1234 Example Street">
+      <input type="text" class="form-control" name="home_address" placeholder="1234 Example Street" required>
     <label for="home_apt">Apartment number</label>
       <input type="text" class="form-control" name="home_apt" placeholder="Apt. 3"> <!-- @todo: Determine whether this needs to be in a separate field on the PDF for it to be usable. -->
     <label for="home_city">City</label> <!-- @todo: Reconcile with home_city_state -->
-      <input type="text" class="form-control" name="home_city" placeholder="San Francisco">
+      <input type="text" class="form-control" name="home_city" placeholder="San Francisco" required>
       <div class="input-group">
-        <input type="text" class="form-control" name="home_zip_code" placeholder="941...">
+        <input type="text" class="form-control" name="home_zip_code" placeholder="941..." required>
       </div>
       <span class="help-block">You have to live in California to be eligible for Medi-Cal. If you don't live in California, apply for Medicaid.</span>
   </div>
