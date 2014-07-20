@@ -8,20 +8,9 @@ module Calfresh
     home_address: 'HOME ADDRESS NUMBER AND STREET DO NOT LIST A PO BOX UNLESS HOMELESS 2', \
     home_apt: 'APARTMENT NUMBER 3', \
     home_city_state: 'CITYSTATE 5', \
-    home_county: 'COUNTY 6', \
     home_zip_code: 'ZIP CODE 7', \
-    mailing_address: 'Mailing Address if different from above', \
-    mailing_apt: 'APARTMENT NUMBER 10', \
-    mailing_city_state: 'CITY 12', \
-    mailing_zip: 'ZIP CODE 13', \
-    home_phone_number_area_code: 'HOME PHONE Area Code', \
-    home_phone_number: 'HOME PHONE  Phone Number', \
-    work_phone_number_area_code: 'WORK PHONE   Area Code', \
-    work_phone_number: 'WORK PHONE  Phone number', \
     message_phone_number_area_code: 'Area Code', \
     message_phone_number: 'Message Phone #', \
-    language_speak: '14A WHAT LANGUAGEDIALECT DO YOU SPEAK BEST', \
-    language_read: 'WHAT LANGUAGE DO YOU READ BEST?',
   }
 
   class ApplicationWriter
