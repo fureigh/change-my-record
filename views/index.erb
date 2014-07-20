@@ -3,7 +3,7 @@
 <form role="form" name="apply" action="applications" method="post">
   <div class="form-group">
     <label for="name_first">First name</label>
-      <input type="text" class="form-control" name="name_first" id="name_first" placeholder="Juanita">
+      <input type="text" class="form-control" name="name_first" id="name_first" placeholder="Juanita" required>
       <span class="help-block">Include your legal first name.</span>
   </div>
 
@@ -15,70 +15,34 @@
 
   <div class="form-group">
     <label for="name_last">Last name</label>
-      <input type="text" class="form-control" name="name_last" id="name_last" placeholder="Smith">
+      <input type="text" class="form-control" name="name_last" id="name_last" placeholder="Smith" required>
       <span class="help-block">Include your legal last name.</span>
   </div>
 
   <div class="form-group">
     <label for="home_address">Address</label>
-      <input type="text" class="form-control" name="home_address" placeholder="1234 Fake Street">
+      <input type="text" class="form-control" name="home_address" placeholder="1234 Example Street" required>
     <label for="home_apt">Apartment number</label>
       <input type="text" class="form-control" name="home_apt" placeholder="Apt. 3"> <!-- @todo: Determine whether this needs to be in a separate field on the PDF for it to be usable. -->
     <label for="home_city">City</label> <!-- @todo: Reconcile with home_city_state -->
-      <input type="text" class="form-control" name="home_city" placeholder="San Francisco">
+      <input type="text" class="form-control" name="home_city" placeholder="San Francisco" required>
       <div class="input-group">
-        <input type="text" class="form-control" name="home_zip_code" placeholder="941...">
+        <input type="text" class="form-control" name="home_zip_code" placeholder="941..." required>
       </div>
       <span class="help-block">You have to live in California to be eligible for Medi-Cal. If you don't live in California, apply for Medicaid.</span>
-  </div>
-
-  <div class="form-group">
-    <label for="home_county">County</label>
-      <input type="text" class="form-control" name="home_county" id="home_county" placeholder="San Francisco">
-      <span class="help-block">The county in which you live.</span>
-  </div>
-
-  <div class="form-group">
-    <label for="mailing_address">Mailing address (if different from above) or P.O. box</label>
-      <input type="text" class="form-control" name="mailing_address" placeholder="1234 Fake Street">
-    <label for="mailing_apt">Apartment number</label>
-      <input type="text" class="form-control" name="mailing_apt" placeholder="Apt. 3"> <!-- @todo: Determine whether this needs to be in a separate field on the PDF for it to be usable. -->
-    <label for="mailing_city_state">City</label> <!-- @todo: Reconcile with home_city_state -->
-      <input type="text" class="form-control" name="mailing_city_state" placeholder="San Francisco">
-      <div class="input-group">
-        <input type="text" class="form-control" name="mailing_zip" placeholder="941...">
-      </div>
   </div>
 
   <!-- State: CA -->
   <input type="hidden" class="form-control" name="home_state" value="CA">
 
   <!-- Phone numbers -->
-  <!-- @todo: Make clear which of these fields are NOT required and what their intended use is. -->
-  <!-- "Message number" -->
+  <!-- "Message number" instead of home/work number -->
   <div class="form-group">
     <label for="message_phone_number_area_code">Area code</label>
       <input type="text" class="form-control" name="message_phone_number_area_code" placeholder="415">
     <label for="message_phone_number">Phone number</label>
       <input type="text" class="form-control" name="message_phone_number" placeholder="555-5555">
       <span class="help-block">A phone number where it's okay to leave a message.</span>
-  </div>
-
-  <!-- Home number -->
-  <div class="form-group">
-    <label for="home_phone_number_area_code">Area code</label>
-      <input type="text" class="form-control" name="home_phone_number_area_code" placeholder="415">
-    <label for="home_phone_number">Home phone number</label>
-      <input type="text" class="form-control" name="home_phone_number" placeholder="555-5555">
-  </div>
-
-  <!-- Work number -->
-  <div class="form-group">
-    <label for="work_phone_number_area_code">Area code</label>
-      <input type="text" class="form-control" name="work_phone_number_area_code" placeholder="415">
-    <label for="work_phone_number">Work phone number</label>
-      <input type="text" class="form-control" name="work_phone_number" placeholder="555-5555">
-      <span class="help-block">A work number where we can reach you, if applicable.</span>
   </div>
 
   <div class="form-group">
@@ -88,14 +52,99 @@
   </div>
 
   <div class="form-group">
-    <label for="language_speak">What language/dialect do you speak best?</label>
-      <input type="text" class="form-control" name="language_speak" placeholder="Spanish">
-      <span class="help-block">You don't have to include this, but it will help us communicate with you.</span>
+    <fieldset id="gender-field">
+      <legend id="gender-label">Gender</legend>
+      <div class="field field-radio-input">
+        <label for="gender_male" required>
+          Male
+         <input type="radio" name="gender" id="gender_male" required></input>
+        </label>
+      </div>
+      <div class="field field-radio-input">
+        <label for="gender_female">
+          Female
+          <input type="radio" name="gender" id="gender_female" required></input>
+        </label>
+      </div>
+      <span class="help-block">Your gender as recorded on your Social Security card.</span>
+    </fieldset>
   </div>
+
   <div class="form-group">
-    <label for="language_read">What language do you read best?</label>
-      <input type="text" class="form-control" name="language_read" placeholder="English">
-      <span class="help-block">You don't have to include this, but it will help us communicate with you.</span>
+      <fieldset id="dob">
+        <legend id="dob-label">Date of birth</legend>
+        <label for="dob_month">Month</label>
+          <input id="dob_month" name="dob_month" type="month" required></input>
+        <label for="dob_day">Day</label>
+          <input id="dob_day" name="dob_day" type="day" required></input>
+        <label for="dob_year">Year</label>
+          <input id="dob_year" name="dob_year" type="year" required></input>
+      </fieldset>
+  </div>
+
+  <div class="form-group">
+      <label for="ssn">Social Security Number</label>
+      <input for="ssn" name="ssn" type="text" placeholder="000-33-0000"></input>
+      <span class="help-block">You may be able to receive Medi-Cal even if you do not have a Social Security Number.</span>
+  </div>
+
+  <div class="form-group">
+    <fieldset id="marital-status-field">
+      <legend id="marital-status-label">Marital status</legend>
+      <div class="field field-radio-input">
+        <label for="marital_status_single">
+          Single
+          <input type="radio" name="marital_status" id="marital_status_single" required></input>
+        </label>
+      </div>
+      <div class="field field-radio-input">
+        <label for="marital_status_married" required>
+          Married
+         <input type="radio" name="marital_status" id="marital_status_married"></input>
+        </label>
+      </div>
+      <div class="field field-radio-input">
+        <label for="marital_status_divorced" required>
+          Divorced
+         <input type="radio" name="marital_status" id="marital_status_divorced"></input>
+        </label>
+      </div>
+      <div class="field field-radio-input">
+        <label for="marital_status_separated" required>
+          Separated
+         <input type="radio" name="marital_status" id="marital_status_separated"></input>
+        </label>
+      </div>
+      <div class="field field-radio-input">
+        <label for="marital_status_widowed" required>
+          Widowed
+         <input type="radio" name="marital_status" id="marital_status_widowed"></input>
+        </label>
+      </div>
+    </fieldset>
+  </div>
+
+  <div class="form-group">
+    <fieldset id="citizen-field">
+      <legend id="citizen-label">Are you a U.S. citizen or national?</legend>
+        <label for="citizen_yes" required>
+          Yes
+         <input type="radio" name="citizen" id="citizen_yes" required></input>
+        </label>
+        <label for="citizen_no">
+          No
+          <input type="radio" name="citizen" id="citizen_no" required></input>
+        </label>
+      <fieldset id="us-entry-dates">
+        <legend id="us-entry-dates-label">If "No," on what date did you enter the U.S.?</legend>
+        <label for="us_entry_month">Month</label>
+          <input id="us_entry_month" name="us_entry_month" type="month" required></input>
+        <label for="us_entry_day">Day</label>
+          <input id="us_entry_day" name="us_entry_day" type="day" required></input>
+        <label for="us_entry_year">Year</label>
+          <input id="us_entry_year" name="us_entry_year" type="year" required></input>
+      </fieldset>
+    </fieldset>
   </div>
 
   <div class="form-group">
