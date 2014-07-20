@@ -1,6 +1,6 @@
 The MIT License (MIT)
 
-Copyright (c) 2014 Dave Guarino
+CalFresh and So Clean is copyright (c) 2014 Dave Guarino
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
