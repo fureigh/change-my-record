@@ -12,6 +12,9 @@ module Calfresh
     message_phone_number_area_code: 'Area Code', \
     message_phone_number: 'Message Phone #', \
     gender: 'Adult 1 Checkbox', \
+    dob_month: 'Adult 1 Month', \
+    dob_day: 'Adult 1 Day', \
+    dob_year: 'Adult 1 Year', \
   }
 
   class ApplicationWriter
