@@ -15,6 +15,7 @@ module Calfresh
     dob_month: 'Adult 1 Month', \
     dob_day: 'Adult 1 Day', \
     dob_year: 'Adult 1 Year', \
+    ssn: 'Social Security', \
   }
 
   class ApplicationWriter
