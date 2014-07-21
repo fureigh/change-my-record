@@ -84,15 +84,35 @@
   <div class="form-group">
     <fieldset id="dob">
       <legend id="dob-label">Date of birth</legend>
-      <label for="dob_month">Month
-        <input id="dob_month" name="dob_month" type="month" required />
-      </label>
-      <label for="dob_day">Day
-        <input id="dob_day" name="dob_day" type="day" required />
-      </label>
-      <label for="dob_year">Year
-        <input id="dob_year" name="dob_year" type="year" required />
-      </label>
+      <div class="col-sm-4">
+        <label for="dob_month">Month</label>
+        <!-- Using select instead of HTML5 input element with type 'date' because not all browsers display the date picker. -->
+        <!-- @todo: Replace with Chosen. -->
+        <select class="form-control">
+          <option>January</option>
+          <option>February</option>
+          <option>March</option>
+          <option>April</option>
+          <option>May</option>
+          <option>June</option>
+          <option>July</option>
+          <option>August</option>
+          <option>September</option>
+          <option>October</option>
+          <option>November</option>
+          <option>December</option>
+        </select>
+      </div>
+      <div class="col-sm-4">
+        <label for="dob_day">Day</label>
+          <input id="dob_day" name="dob_day" type="number" min="1" max="31" class="form-control" placeholder="23" />
+        </label>
+      </div>
+      <div class="col-sm-4">
+        <label for="dob_year">Year</label>
+          <input id="dob_year" name="dob_year" type="number" min="1900" max="2014" class="form-control" placeholder="1953" />
+        </label>
+      </div>
     </fieldset>
   </div>
 
@@ -154,18 +174,35 @@
   <div class="form-group">
     <fieldset id="us-entry-dates">
       <legend id="us-entry-dates-label">If &ldquo;No,&rdquo; on what date did you enter the U.S.?</legend>
-      <label for="us_entry_month">
-        Month
-        <input id="us_entry_month" name="us_entry_month" type="month" required />
-      </label>
-      <label for="us_entry_day">
-        Day
-        <input id="us_entry_day" name="us_entry_day" type="day" required />
-      </label>
-      <label for="us_entry_year">
-        Year
-        <input id="us_entry_year" name="us_entry_year" type="year" required />
-      </label>
+      <div class="col-sm-4">
+        <label for="us_entry_month">Month</label>
+        <!-- Using select instead of HTML5 input element with type 'date' because not all browsers display the date picker. -->
+        <!-- @todo: Replace with Chosen. -->
+        <select class="form-control">
+          <option>January</option>
+          <option>February</option>
+          <option>March</option>
+          <option>April</option>
+          <option>May</option>
+          <option>June</option>
+          <option>July</option>
+          <option>August</option>
+          <option>September</option>
+          <option>October</option>
+          <option>November</option>
+          <option>December</option>
+        </select>
+      </div>
+      <div class="col-sm-4">
+        <label for="us_entry_day">Day</label>
+          <input id="us_entry_day" name="us_entry_day" type="number" min="1" max="31" class="form-control" placeholder="23" />
+        </label>
+      </div>
+      <div class="col-sm-4">
+        <label for="us_entry_year">Year</label>
+          <input id="us_entry_year" name="us_entry_year" type="number" min="1900" max="2014" class="form-control" placeholder="1953" />
+        </label>
+      </div>
     </fieldset>
   </div>
 
