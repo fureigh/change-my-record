@@ -1,16 +1,24 @@
 <h1>Apply for Medi-Cal</h1>
 <hr>
 <form role="form" name="apply" action="applications" method="post">
-  <div class="form-group">
-    <label for="name_first">First name</label>
-      <input type="text" class="form-control" name="name_first" id="name_first" placeholder="Juanita" required>
-      <span class="help-block">Include your legal first name.</span>
-  </div>
+  <div class="row">
+    <div class="form-group col-xs-4">
+      <label for="name_first">First name</label>
+        <input type="text" class="form-control" name="name_first" id="name_first" placeholder="Juanita" required>
+        <span class="help-block">Include your legal first name.</span>
+    </div>
 
-  <div class="form-group">
-    <label for="name_middle_initial">Middle initial</label>
-      <input type="text" class="form-control" name="name_middle_initial" id="name_middle_initial" placeholder="Q">
-      <span class="help-block">Include the initial of your legal middle name, if you have one.</span>
+    <div class="form-group col-xs-2">
+      <label for="name_middle_initial">Middle initial</label>
+        <input type="text" class="form-control" name="name_middle_initial" id="name_middle_initial" placeholder="Q">
+        <span class="help-block">Include the initial of your legal middle name, if you have one.</span>
+    </div>
+
+    <div class="form-group col-xs-5">
+      <label for="name_last">Last name</label>
+        <input type="text" class="form-control" name="name_last" id="name_last" placeholder="Smith" required>
+        <span class="help-block">Include your legal last name.</span>
+    </div>
   </div>
 
   <div class="form-group">
