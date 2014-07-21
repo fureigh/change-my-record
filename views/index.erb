@@ -5,46 +5,42 @@
     <div class="form-group col-sm-5">
       <label for="name_first">First name</label>
         <input type="text" name="name_first" id="name_first" placeholder="Juanita" class="form-control" required />
-        <span class="help-block">Your legal first name.</span>
+      <span class="help-block">Your legal first name.</span>
     </div>
 
-    <div class="form-group col-sm-2">
+    <div class="form-group col-sm-3">
       <label for="name_middle_initial">Middle initial</label>
         <input type="text" name="name_middle_initial" id="name_middle_initial" placeholder="Q" class="form-control" />
-        <span class="help-block">The initial of your legal middle name, if you have one.</span>
+      <span class="help-block">If you have one.</span>
     </div>
 
-    <div class="form-group col-sm-6">
+    <div class="form-group col-sm-5">
       <label for="name_last">Last name</label>
         <input type="text" name="name_last" id="name_last" placeholder="Smith" class="form-control" required />
-        <span class="help-block">Your legal last name.</span>
+      <span class="help-block">Your legal last name.</span>
     </div>
   </div>
 
   <div class="row">
     <div class="form-group col-sm-9">
-      <label for="home_address">Address
+      <label for="home_address">Address</label>
         <input type="text" class="form-control col-sm-9" name="home_address" placeholder="1234 Example Street" required />
-      </label>
     </div>
     <div class="form-group col-sm-3">
-      <label for="home_apt">Apartment number
+      <label for="home_apt">Apartment number</label>
         <input type="text" class="form-control col-sm-3" name="home_apt" placeholder="Apt. 3" /><!-- @todo: Determine whether this needs to be in a separate field on the PDF for it to be usable. -->
-      </label>
     </div>
   </div>
 
   <div class="row">
     <div class="form-group col-sm-9">
-      <label for="home_city">City <!-- @todo: Reconcile with home_city_state -->
+      <label for="home_city">City</label> <!-- @todo: Reconcile with home_city_state -->
         <input type="text" class="form-control col-sm-9" name="home_city" placeholder="San Francisco" required>
-      </label>
       <span class="help-block">You have to live in California to be eligible for Medi-Cal. If you don&rsquo;t live in California, apply for Medicaid.</span>
     </div>
     <div class="form_group col-sm-3">
-      <label for="zip">ZIP code
+      <label for="zip">ZIP code</label>
         <input type="text" class="form-control col-sm-3" name="home_zip_code" placeholder="941..." required>
-      </label>
     </div>
   </div>
 
@@ -55,21 +51,19 @@
   <!-- "Message number" instead of home/work number -->
   <div class="row">
     <div class="form-group col-sm-3">
-      <label for="message_phone_number_area_code">Area code
+      <label for="message_phone_number_area_code">Area code</label>
         <input type="text" class="form-control" name="message_phone_number_area_code" placeholder="415">
-      </label>
     </div>
-    <div class="form-group col-sm-17">
-      <label for="message_phone_number">Phone number
+    <div class="form-group col-sm-9">
+      <label for="message_phone_number">Phone number</label>
         <input type="text" class="form-control" name="message_phone_number" placeholder="555-5555">
-      </label>
     </div>
   </div>
 
   <div class="form-group">
     <label for="email">Email</label>
-      <input type="text" class="form-control" name="email" placeholder="juanita.smith@example.com">
-      <span class="help-block">You don&rsquo;t have to include your phone number or email address, but it will help us get in touch with you.</span>
+    <input type="text" class="form-control" name="email" placeholder="juanita.smith@example.com">
+    <span class="help-block">You don&rsquo;t have to include your phone number or email address, but it will help us get in touch with you.</span>
   </div>
 
   <div class="form-group">
