@@ -2,26 +2,18 @@ require 'pdf_forms'
 require 'securerandom'
 
 module Calfresh
-  FORM_FIELDS = { name_first: 'First Name', \
-    name_middle_initial: 'Middle Initial', \
-    name_last: 'Last Name', \
-    home_address: 'HOME ADDRESS NUMBER AND STREET DO NOT LIST A PO BOX UNLESS HOMELESS 2', \
-    home_apt: 'APARTMENT NUMBER 3', \
-    home_city_state: 'CITYSTATE 5', \
-    home_zip_code: 'ZIP CODE 7', \
-    message_phone_number_area_code: 'Area Code', \
-    message_phone_number: 'Message Phone #', \
-    gender: 'Adult 1 Checkbox', \
-    dob_month: 'Adult 1 Month', \
-    dob_day: 'Adult 1 Day', \
-    dob_year: 'Adult 1 Year', \
-    ssn: 'Social Security', \
-    marital_status: 'Adult 1A Status', \
-    citizen: '#50 AD1', \
-    us_entry_month: 'Adult 1 Citizen Month', \
-    us_entry_day: 'Adult 1 Citizen Day', \
-    us_entry_year: 'Adult 1 Citizen Year', \
+  FORM_FIELDS = {
+    case_number: 'CASE NUMBER', \
+    felony_counts: 'code sect', \
+    code_sections: 'pursuant to Penal Code 117018', \
+    sentence_is_complete: 'Defendant alleges that she', \
+    sentence_is_in_progress: 'undefined_3', \
+    mailing_address: 'undefined_4', \
+    name_of_defendant: 'TYPE OR PRINT NAME', \
+    name_of_counsel: 'TYPE OR PRINT NAME_2', \
   }
+
+  # @todo: Add a second signature field for signature of counsel.
 
   class ApplicationWriter
     def initialize
@@ -36,7 +28,7 @@ module Calfresh
       input_for_pdf_writer[FORM_FIELDS[:date]] = Date.today.strftime("%m/%d/%Y")
       unique_key = SecureRandom.hex
       filled_in_form_path = "/tmp/application_#{unique_key}.pdf"
-      @pdftk.fill_form('./calfresh_application_single_page.pdf', filled_in_form_path, input_for_pdf_writer) # @todo: Update.
+      @pdftk.fill_form('./alameda_county.pdf', filled_in_form_path, input_for_pdf_writer) # @todo: Update.
       write_signature_png_to_tmp(base64_signature_blob, unique_key)
       convert_application_pdf_to_png_set(unique_key)
       add_signature_to_application(unique_key)

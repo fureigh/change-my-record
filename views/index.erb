@@ -1,62 +1,78 @@
-<h1>Apply for Medi-Cal</h1>
+<h1>Change your Record</h1>
 <hr>
 <form role="form" class="form-horizontal" name="apply" action="applications" method="post">
+  <div class="row steps-to-enroll" style="margin-top: 0; padding-top: 0;">
+    <div class="col-lg-9">
+      <div class="step-to-enroll">
+        <p class="step-explanation">With the passage of Proposition 47, certain low-level, nonviolent felonies can now be changed to misdemeanors on old criminal records in California. If you or someone you know has a prior criminal record with a felony record for any of the following crimes, you may qualify to remove the felony from your record and change it to a misdemeanor:
+        </p>
+
+        <ul>
+          <li>Simple drug possession </li>
+          <li>Petty theft under 950 dollars</li>
+          <li>Shoplifting under 950 dollars</li>
+          <li>Forging or writing a bad check under 950 dollars</li>
+          <li>Receipt of stolen property under 950 dollars</li>
+        </ul>
+
+        <p>If you have a previous conviction for crimes such as rape, murder or child molestation or are in the sex offender registry, you will not be eligible to get these felonies reclassified. <a href="http://www.sandiegocounty.gov/content/sdc/public_defender/Prop47Excludable.html">These crimes will prevent you</a> from getting your record reclassified. Here&rsquo;s <a href="http://www.cdcr.ca.gov/news/Proposition_47.html">more information</a> from the California Department of Rehabilitation and Corrections.</p>
+      </div>
+    </div>
+  </div>
+  <!-- Insert county selection here and move the rest to the next step. The following fields are for Alameda County. -->
   <div class="row">
-    <div class="form-group col-sm-5">
-      <label for="name_first">First name</label>
-        <input type="text" name="name_first" id="name_first" placeholder="JK" class="form-control" required />
-      <span class="help-block">Your legal first name.</span>
+    <div class="form-group col-sm-9">
+      <label for="case_number">Case number</label>
+        <input type="text" name="case_number" id="case_number" placeholder="155" class="form-control" />
+      <span class="help-block">Your original case number.</span>
     </div>
 
-    <div class="form-group col-sm-3">
-      <label for="name_middle_initial">Middle initial</label>
-        <input type="text" name="name_middle_initial" id="name_middle_initial" placeholder="Q" class="form-control" />
-      <span class="help-block">If you have one.</span>
+    <div class="form-group col-sm-9">
+      <label for="felony_counts">Felony counts</label>
+        <input type="text" name="felony_counts" id="felony_counts" placeholder="2" class="form-control" />
+      <span class="help-block">The number of felonies you want to have reduced to misdemeanors. <em>(Insert legal disclaimer.)</em></span>
     </div>
 
-    <div class="form-group col-sm-5">
-      <label for="name_last">Last name</label>
-        <input type="text" name="name_last" id="name_last" placeholder="Smith" class="form-control" required />
-      <span class="help-block">Your legal last name.</span>
+    <div class="form-group col-sm-9">
+      <label for="code_sections">Code sections</label>
+        <input type="text" name="code_sections" id="code_sections" placeholder="484, 488" class="form-control" required />
+      <span class="help-block">The code sections that those felonies violated.</span>
+    </div>
+  </div>
+
+  <!-- @todo: Add whether the sentence is in progress or complete. -->
+
+  <div class="row">
+    <div class="form-group col-sm-9">
+      <!-- @todo: Maybe provide more help here? -->
+      <label for="mailing_address">Current mailing address</label>
+        <input type="text" class="form-control col-sm-9" name="mailing_address" id="mailing_address" placeholder="1234 Example Street, Oakland, CA 94607" required />
     </div>
   </div>
 
   <div class="row">
     <div class="form-group col-sm-9">
-      <label for="home_address">Address</label>
-        <input type="text" class="form-control col-sm-9" name="home_address" placeholder="1234 Example Street" required />
+      <label for="name_of_defendant">Defendant&rsquo;s name</label>
+        <input type="text" name="name_of_defendant" id="name_of_defendant" placeholder="J.K. Smith" class="form-control" required />
+      <span class="help-block">Your full legal name.</span>
     </div>
-    <div class="form-group col-sm-3">
-      <label for="home_apt">Apartment number</label>
-        <input type="text" class="form-control col-sm-3" name="home_apt" placeholder="Apt. 3" /><!-- @todo: Determine whether this needs to be in a separate field on the PDF for it to be usable. -->
-    </div>
-  </div>
-
   <div class="row">
     <div class="form-group col-sm-9">
-      <label for="home_city">City</label> <!-- @todo: Reconcile with home_city_state -->
-        <input type="text" class="form-control col-sm-9" name="home_city" placeholder="San Francisco" required>
-      <span class="help-block">You have to live in California to be eligible for Medi-Cal. If you don&rsquo;t live in California, apply for Medicaid.</span>
-    </div>
-    <div class="form_group col-sm-3">
-      <label for="zip">ZIP code</label>
-        <input type="text" class="form-control col-sm-3" name="home_zip_code" placeholder="941..." required>
+      <label for="name_of_counsel">Counsel&rsquo;s name</label>
+        <input type="text" name="name_of_counsel" id="name_of_counsel" placeholder="Monica Q. Lawyer" class="form-control" required />
+      <span class="help-block">Your counsel&rsquo;s full legal name, if you have legal representation.</span>
     </div>
   </div>
-
-  <!-- State: CA -->
-  <input type="hidden" class="form-control" name="home_state" value="CA">
 
   <!-- Phone numbers -->
-  <!-- "Message number" instead of home/work number -->
   <div class="row">
     <div class="form-group col-sm-3">
-      <label for="message_phone_number_area_code">Area code</label>
-        <input type="text" class="form-control" name="message_phone_number_area_code" placeholder="415">
+      <label for="phone_number_area_code">Area code</label>
+        <input type="text" class="form-control" name="phone_number_area_code" placeholder="510">
     </div>
     <div class="form-group col-sm-9">
-      <label for="message_phone_number">Phone number</label>
-        <input type="text" class="form-control" name="message_phone_number" placeholder="555-5555">
+      <label for="phone_number">Phone number</label>
+        <input type="text" class="form-control" name="phone_number" placeholder="555-5555">
     </div>
   </div>
 
@@ -67,146 +83,6 @@
   </div>
 
   <div class="form-group">
-    <fieldset id="gender-field">
-      <legend id="gender-label">Gender</legend>
-      <label for="gender_male" required>
-       <input type="radio" name="gender" id="gender_male" value="Male" required />
-        Male
-      </label>
-      <label for="gender_female">
-        <input type="radio" name="gender" id="gender_female" value="Female" required />
-        Female
-      </label>
-      <span class="help-block">Your gender as recorded on your Social Security card.</span>
-    </fieldset>
-  </div>
-
-  <div class="form-group">
-    <fieldset id="dob">
-      <legend id="dob-label">Date of birth</legend>
-      <div class="col-sm-4">
-        <label for="dob_month">Month</label>
-        <!-- Using select instead of HTML5 input element with type 'date' because not all browsers display the date picker. -->
-        <!-- @todo: Replace with Chosen. -->
-        <select class="form-control">
-          <option>January</option>
-          <option>February</option>
-          <option>March</option>
-          <option>April</option>
-          <option>May</option>
-          <option>June</option>
-          <option>July</option>
-          <option>August</option>
-          <option>September</option>
-          <option>October</option>
-          <option>November</option>
-          <option>December</option>
-        </select>
-      </div>
-      <div class="col-sm-4">
-        <label for="dob_day">Day</label>
-          <input id="dob_day" name="dob_day" type="number" min="1" max="31" class="form-control" placeholder="23" />
-        </label>
-      </div>
-      <div class="col-sm-4">
-        <label for="dob_year">Year</label>
-          <input id="dob_year" name="dob_year" type="number" min="1900" max="2014" class="form-control" placeholder="1953" />
-        </label>
-      </div>
-    </fieldset>
-  </div>
-
-  <div class="form-group">
-    <fieldset id="marital-status-field">
-      <legend id="marital-status-label">Marital status</legend>
-      <div class="field field-radio-input">
-        <label for="marital_status_single">
-          <input type="radio" name="marital_status" id="marital_status_single" value="Single" required />
-          Single
-        </label>
-      </div>
-      <div class="field field-radio-input">
-        <label for="marital_status_married">
-         <input type="radio" name="marital_status" id="marital_status_married" value="Married" required />
-          Married
-        </label>
-      </div>
-      <div class="field field-radio-input">
-        <label for="marital_status_divorced">
-         <input type="radio" name="marital_status" id="marital_status_divorced" value="Divorced" required />
-          Divorced
-        </label>
-      </div>
-      <div class="field field-radio-input">
-        <label for="marital_status_separated">
-         <input type="radio" name="marital_status" id="marital_status_separated" value="Separated" required />
-          Separated
-        </label>
-      </div>
-      <div class="field field-radio-input">
-        <label for="marital_status_widowed" required>
-         <input type="radio" name="marital_status" id="marital_status_widowed" value="Widowed" required />
-          Widowed
-        </label>
-      </div>
-    </fieldset>
-  </div>
-
-  <div class="form-group">
-      <label for="ssn">Social Security Number</label>
-      <input for="ssn" name="ssn" type="text" class="form-control" placeholder="000-33-0000" />
-      <span class="help-block">You may be able to receive Medi-Cal even if you do not have a Social Security Number.</span>
-  </div>
-
-  <div class="form-group">
-    <fieldset id="citizen-field">
-      <legend id="citizen-label">Are you a U.S. citizen or national?</legend>
-      <label for="citizen_yes" class="radio-inline">
-       <input type="radio" name="citizen" id="citizen_yes" value="Yes" required />
-       Yes
-      </label>
-      <label for="citizen_no" class="radio-inline">
-        <input type="radio" name="citizen" id="citizen_no" value="No" required />
-        No
-      </label>
-    </fieldset>
-  </div>
-  <div class="form-group">
-    <fieldset id="us-entry-dates">
-      <legend id="us-entry-dates-label">If &ldquo;No,&rdquo; on what date did you enter the U.S.?</legend>
-      <div class="col-sm-4">
-        <label for="us_entry_month">Month</label>
-        <!-- Using select instead of HTML5 input element with type 'date' because not all browsers display the date picker. -->
-        <!-- @todo: Replace with Chosen. -->
-        <select class="form-control">
-          <option>January</option>
-          <option>February</option>
-          <option>March</option>
-          <option>April</option>
-          <option>May</option>
-          <option>June</option>
-          <option>July</option>
-          <option>August</option>
-          <option>September</option>
-          <option>October</option>
-          <option>November</option>
-          <option>December</option>
-        </select>
-      </div>
-      <div class="col-sm-4">
-        <label for="us_entry_day">Day</label>
-          <input id="us_entry_day" name="us_entry_day" type="number" min="1" max="31" class="form-control" placeholder="23" />
-        </label>
-      </div>
-      <div class="col-sm-4">
-        <label for="us_entry_year">Year</label>
-          <input id="us_entry_year" name="us_entry_year" type="number" min="1900" max="2014" class="form-control" placeholder="1953" />
-        </label>
-      </div>
-    </fieldset>
-  </div>
-
-  <div class="form-group">
     <label for="signature">Signature</label>
       <div id="signature_area" class="panel"></div>
       <div id="signature_value_hidden"></div>
@@ -214,6 +90,9 @@
   </div>
 
     <div class="form-group">
-        <button type="submit" id="submit_button" class="btn btn-default" disabled="disabled">Submit your Medi-Cal application!</button>
+        <button type="submit" id="submit_button" class="btn btn-default" disabled="disabled">Submit your petition!</button>
     </div>
 </form>
+<footer>
+  <p>Thanks to <a href="http://www.safeandjust.org/recordchange">Californians for Safety and Justice</a> for the text above.
+</footer>
