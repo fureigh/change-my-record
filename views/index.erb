@@ -19,6 +19,8 @@
       </div>
     </div>
   </div>
+  <!-- @todo: Add a selector and next steps based on whether the sentence is in progress or complete. This can only be used by people who have completed their sentences for the relevant offense. -->
+
   <!-- Insert county selection here and move the rest to the next step. The following fields are for Alameda County. -->
   <div class="row">
     <div class="form-group col-sm-9">
@@ -26,21 +28,7 @@
         <input type="text" name="case_number" id="case_number" placeholder="155" class="form-control" />
       <span class="help-block">Your original case number.</span>
     </div>
-
-    <div class="form-group col-sm-9">
-      <label for="felony_counts">Felony counts</label>
-        <input type="text" name="felony_counts" id="felony_counts" placeholder="2" class="form-control" />
-      <span class="help-block">The number of felonies you want to have reduced to misdemeanors. <em>(Insert legal disclaimer.)</em></span>
-    </div>
-
-    <div class="form-group col-sm-9">
-      <label for="code_sections">Code sections</label>
-        <input type="text" name="code_sections" id="code_sections" placeholder="484, 488" class="form-control" required />
-      <span class="help-block">The code sections that those felonies violated.</span>
-    </div>
   </div>
-
-  <!-- @todo: Add whether the sentence is in progress or complete. -->
 
   <div class="row">
     <div class="form-group col-sm-9">
@@ -59,9 +47,9 @@
   </div>
   <div class="row">
     <div class="form-group col-sm-9">
-      <label for="name_of_counsel">Counsel&rsquo;s name</label>
+      <label for="name_of_counsel">Attorney&rsquo;s name</label>
         <input type="text" name="name_of_counsel" id="name_of_counsel" placeholder="Monica Q. Lawyer" class="form-control" required />
-      <span class="help-block">Your counsel&rsquo;s full legal name, if you have legal representation.</span>
+      <span class="help-block">Your attorney&rsquo;s full legal name, if you have legal representation.</span>
     </div>
   </div>
 
@@ -83,6 +71,9 @@
     <span class="help-block">You don&rsquo;t have to include your phone number or email address, but it will help us get in touch with you.</span>
   </div>
 
+  <!-- @todo: Figure out how best to include consent for receiving reply by email. -->
+  <!-- @todo: Add the piece about requesting a hearing or not. -->
+
   <div class="row legalese" style="margin: 32px 0 32px 0">
     <!-- How much room is there to make this friendlier? -->
     <p class="firearms">By signing below, you acknowledge that <strong>you may not use, own or possess firearms</strong>, even if this Petition is granted.
@@ -99,9 +90,25 @@
       <span class="help-block">Sign on the line. You can sign with your mouse or your finger if you're using a touch screen.</span>
   </div>
 
-    <div class="form-group">
-        <button type="submit" id="submit_button" class="btn btn-default" disabled="disabled">Submit your petition!</button>
-    </div>
+  <!-- @todo: Add second signature panel for counsel. Maybe an "are you filling this out with the help of a lawyer?" question on which that's contingent. Doublecheck that 'with the help of a lawyer' is accurate. -->
+
+<!--
+  <div class="row legalese" style="margin: 32px 0 32px 0">
+    <p>&ldquo;I verify that the foregoing information is true and correct to the best of my knowledge.&rdquo;
+    </p>
+  </div>
+
+  <div class="form-group">
+    <label for="signature_counsel">Signature</label>
+      <div id="signature_counsel_area" class="panel"></div>
+      <div id="signature_counsel_value_hidden"></div>
+      <span class="help-block">Sign on the line. You can sign with your mouse or your finger if you're using a touch screen.</span>
+  </div>
+-->
+
+  <div class="form-group">
+      <button type="submit" id="submit_button" class="btn btn-default" disabled="disabled">Submit your petition!</button>
+  </div>
 </form>
 <footer>
   <p>Thanks to <a href="http://www.safeandjust.org/recordchange">Californians for Safety and Justice</a> for the text above.
