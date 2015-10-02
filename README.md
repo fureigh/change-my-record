@@ -19,6 +19,8 @@ You see a user-friendly form. County officials get the same exact form they're u
 
 For context on the roots of this project, see "[Help Californians remove old felonies from their criminal records](https://github.com/codeforamerica/project-ideas/issues/64)," started by [@jennymt](https://github.com/jennymt).
 
+Thank you to [@codeforamerica](https://github.com/codeforamerica) for supporting expanding this work from an alpha prototype to a private beta in the summer of 2015.
+
 ## Where can I see the latest version?
 
 https://changemyrecord.herokuapp.com has the latest demo, starring Alameda County&rsquo;s form.
